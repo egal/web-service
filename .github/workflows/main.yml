@@ -1,0 +1,35 @@
+name: Build and Push Image to DockerHub
+on:
+  create:
+    tags:
+      - 'v*'
+jobs:
+  docker:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Set up QEMU
+        uses: docker/setup-qemu-action@v1
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v1
+      - name: Login to DockerHub
+        uses: docker/login-action@v1
+        with:
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
+      - name: Prepare tags for image
+        id: image-metadata
+        run: |
+          REPOSITORY="${{ secrets.DOCKERHUB_USERNAME }}/${GITHUB_REPOSITORY#*/egal-}"
+          TAGS="${REPOSITORY}:${GITHUB_REF##*/v}"
+          echo "::set-output name=tags::$TAGS"
+      - name: Build and push
+        uses: docker/build-push-action@v2
+        with:
+          context: .
+          push: true
+          tags: ${{ steps.image-metadata.outputs.tags }}
+      - name: Build and push
+        run: |
+          echo "Pushed tags: ${{ steps.image-metadata.outputs.tags }}"
