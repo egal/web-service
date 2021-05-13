@@ -6,9 +6,9 @@
     "prefer-stable": true,
     "require": {
         "php": "^7.4|^8.0",
-        "egal/egal": "^v2.0.0beta15",
-        "fruitcake/laravel-cors": "^2.0",
-        "ext-json": "*"
+        "ext-json": "*",
+        "egal/framework": "^2.0.0beta16",
+        "fruitcake/laravel-cors": "^2.0"
     },
     "require-dev": {
         "fakerphp/faker": "^1.9.1",
