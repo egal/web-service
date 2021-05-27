@@ -31,16 +31,16 @@
 
 ## Экосистема
 
-| Проект                       |                Статус                | Описание                                                                       |
-|:-----------------------------|:------------------------------------:|:-------------------------------------------------------------------------------|
-| [Docs]                       |        [![Docs Status]][Docs]        | Документация проекта Egal                                                      |
-| [Egal/Framework PHP Package] | ![Egal/Framework PHP Package Status] | Egal/Framework PHP библиотека                                                  |
-| [Egal/Framework NPM Package] | ![Egal/Framework NPM Package Status] | Egal/Framework NPM библиотека                                                  |
-| [Egal/Egal PHP Project]      |   ![Egal/Egal PHP Project Status]    | PHP проект (шаблон) сервиса для Egal экосистемы                                |
-| [Web Service]                |        ![Web Service Status]         | Сервис Egal экосистемы, реализующий адаптацию HTTP запросов к сервисам         |
-| [Auth Service]               |        ![Auth Service Status]        | Сервис Egal экосистемы, реализующий базовые функции авторизации                |
-| [Interface Service]          |     ![Interface Service Status]      | Сервис Egal экосистемы, предназначенный для управления метаданными интерфейсов |
-| [Postgres]                   |          ![Postgres Status]          | Надстроенная Система управления базами данных PostgreSQL для Egal экосистемы   |
+| Проект                       |                               Статус                               | Описание                                                                       |
+|:-----------------------------|:------------------------------------------------------------------:|:-------------------------------------------------------------------------------|
+| [Docs]                       |                       [![Docs Status]][Docs]                       | Документация проекта Egal                                                      |
+| [Egal/Framework PHP Package] | [![Egal/Framework PHP Package Status]][Egal/Framework PHP Package] | Egal/Framework PHP библиотека                                                  |
+| [Egal/Framework NPM Package] | [![Egal/Framework NPM Package Status]][Egal/Framework NPM Package] | Egal/Framework NPM библиотека                                                  |
+| [Egal/Egal PHP Project]      |      [![Egal/Egal PHP Project Status]][Egal/Egal PHP Project]      | PHP проект (шаблон) сервиса для Egal экосистемы                                |
+| [Web Service]                |                [![Web Service Status]][Web Service]                | Сервис Egal экосистемы, реализующий адаптацию HTTP запросов к сервисам         |
+| [Auth Service]               |               [![Auth Service Status]][Auth Service]               | Сервис Egal экосистемы, реализующий базовые функции авторизации                |
+| [Interface Service]          |          [![Interface Service Status]][Interface Service]          | Сервис Egal экосистемы, предназначенный для управления метаданными интерфейсов |
+| [Postgres]                   |                   [![Postgres Status]][Postgres]                   | Надстроенная Система управления базами данных PostgreSQL для Egal экосистемы   |
 
 [Docs]: https://github.com/smartworldteam/egal-docs
 [Egal/Framework PHP Package]: https://github.com/smartworldteam/egal-framework-php-package
