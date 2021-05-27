@@ -1,6 +1,10 @@
 <p align="center"><img src="https://raw.githubusercontent.com/smartworldteam/art/main/logo.svg" height="150"></p>
 <h1 align="center">Egal | Web Service</h1>
-<p align="center"><a href="https://github.com/smartworldteam/egal-web-service"><img src="https://img.shields.io/github/license/smartworldteam/egal-web-service"></a></p>
+<p align="center">
+<a href="https://github.com/smartworldteam/egal-web-service"><img src="https://img.shields.io/github/license/smartworldteam/egal-web-service"></a>
+<a href="https://github.com/smartworldteam/egal-web-service"><img src="https://img.shields.io/docker/v/egalbox/web-service"></a>
+<a href="https://github.com/smartworldteam/egal-web-service"><img src="https://img.shields.io/docker/pulls/egalbox/web-service"></a>
+</p>
 
 ## Новости
 
@@ -8,45 +12,60 @@
 
 [![](https://img.shields.io/badge/Channel%20on-Telegram-informational)](https://t.me/egalbox)
 
-## Документация 
 
-С подробной документацией по продукту можно ознакомиться [здесь](https://smartworldteam.github.io/egal-docs/#/).
+## Документация
+
+С подробной документацией по продукту можно ознакомиться
+[здесь](https://smartworldteam.github.io/egal-docs/#/).
+
 
 ## Поддержка
 
 Нам важно Ваше мнение и обратная связь.
 
-Задать вопрос: 
+Задать вопрос:
 
 [![](https://img.shields.io/badge/Chat%20on-Telegram-blue)](https://t.me/joinchat/n175xzBrCUswMWU6)
-<a href="mailto:egal@smartworld.team"><img src="https://img.shields.io/badge/Mail%20to-egal%40smartworld.team-red"></a>
+[![](https://img.shields.io/badge/Mail%20to-egal%40smartworld.team-red)](mailto:egal@smartworld.team)
 
-## Репозитории
 
-[Docs](https://github.com/smartworldteam/egal-docs) - документация проекта Egal.
+## Экосистема
 
-[Egal/Framework PHP Package](https://github.com/smartworldteam/egal-framework-php-package) - исходный код Egal/Framework PHP библиотеки.
+| Проект                       |                Статус                | Описание                                                                       |
+|:-----------------------------|:------------------------------------:|:-------------------------------------------------------------------------------|
+| [Docs]                       |            ![Docs Status]            | Документация проекта Egal                                                      |
+| [Egal/Framework PHP Package] | ![Egal/Framework PHP Package Status] | Egal/Framework PHP библиотека                                                  |
+| [Egal/Framework NPM Package] | ![Egal/Framework NPM Package Status] | Egal/Framework NPM библиотека                                                  |
+| [Egal/Egal PHP Project]      |   ![Egal/Egal PHP Project Status]    | PHP проект (шаблон) сервиса для Egal экосистемы                                |
+| [Web Service]                |        ![Web Service Status]         | Сервис Egal экосистемы, реализующий адаптацию HTTP запросов к сервисам         |
+| [Auth Service]               |        ![Auth Service Status]        | Сервис Egal экосистемы, реализующий базовые функции авторизации                |
+| [Interface Service]          |     ![Interface Service Status]      | Сервис Egal экосистемы, предназначенный для управления метаданными интерфейсов |
+| [Postgres]                   |          ![Postgres Status]          | Надстроенная Система управления базами данных PostgreSQL для Egal экосистемы   |
 
-[Egal/Framework NPM Package](https://github.com/smartworldteam/egal-framework-npm-package) - исходный код Egal/Framework NPM библиотеки.
+[Docs]: https://github.com/smartworldteam/egal-docs
+[Egal/Framework PHP Package]: https://github.com/smartworldteam/egal-framework-php-package
+[Egal/Framework NPM Package]:https://github.com/smartworldteam/egal-framework-npm-package
+[Egal/Egal PHP Project]:https://github.com/smartworldteam/egal-egal-php-project
+[Web Service]:https://github.com/smartworldteam/egal-web-service
+[Auth Service]:https://github.com/smartworldteam/egal-auth-service
+[Interface Service]: https://github.com/smartworldteam/egal-interface-service
+[Postgres]: https://github.com/smartworldteam/postgres
 
-[Egal Composer Project](https://github.com/smartworldteam/egal-egal-php-project) - PHP шаблон сервиса Egal.
+[Docs Status]: https://img.shields.io/website?url=https%3A%2F%2Fsmartworldteam.github.io%2Fegal-docs%2F%23%2F
+[Egal/Framework PHP Package Status]: https://img.shields.io/packagist/v/egal/framework?include_prereleases
+[Egal/Framework NPM Package Status]: https://img.shields.io/npm/v/@egalteam/egal
+[Egal/Egal PHP Project Status]: https://img.shields.io/packagist/v/egal/egal?include_prereleases
+[Web Service Status]: https://img.shields.io/docker/v/egalbox/web-service?label=dockerhub
+[Auth Service Status]: https://img.shields.io/docker/v/egalbox/auth-service?label=dockerhub
+[Interface Service Status]: https://img.shields.io/docker/v/egalbox/interface-service?label=dockerhub
+[Postgres Status]: https://img.shields.io/docker/v/egalbox/postgres?label=dockerhub
 
-[Auth Service](https://github.com/smartworldteam/egal-auth-service) - коробочный сервис Egal, реализующий базовые функции авторизации.
-
-[Interface Service](https://github.com/smartworldteam/egal-interface-service) - коробочный сервис Egal, предназначенный для управления метаданными интерфейсов.
-
-[Postgres](https://github.com/smartworldteam/postgres) - надстроенная Система управления базами данных PostgreSQL.
-
-[.github](https://github.com/smartworldteam/.github) - репозиторий состояния сообщества по умолчанию для проектов SmartWorldTeam.
 
 ## Разработчик
 
-<p align="center">
-<a href="https://smartworld.team/">
-<img src="https://raw.githubusercontent.com/smartworldteam/art/main/smartworld/logo.svg" width="150"></a>
-</p>
+<p align="center"><a href="https://smartworld.team/"><img src="https://raw.githubusercontent.com/smartworldteam/art/main/smartworld/logo.svg" width="150"></a></p>
 
-Компания ООО "Умный Мир" (Smart World) занимается разработкой IT продуктов,
-а также предоставляет команды опытных IT-специалистов для Ваших проектов.
-Мы решаем самые сложные задачи быстро и без проблем! 
+Компания ООО "Умный Мир" (Smart World) занимается разработкой IT
+продуктов, а также предоставляет команды опытных IT-специалистов для
+Ваших проектов. Мы решаем самые сложные задачи быстро и без проблем!
 
