@@ -8,9 +8,8 @@
 
 [comment]: <> (Replase badges)
 <p align="center">
- <a href="https://packagist.org/packages/egal/framework"><img src="https://poser.pugx.org/egal/framework/license"></a>
+ <a href="https://github.com/smartworldteam/egal-web-service"><img src="https://img.shields.io/github/license/smartworldteam/egal-web-service"></a>
 </p>
-
 
 ## Новости
 
@@ -21,7 +20,6 @@
 ## Документация 
 
 С подробной документацией по продукту можно ознакомиться [здесь](https://smartworldteam.github.io/egal-docs/#/).
-
 
 ## Поддержка
 
