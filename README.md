@@ -33,7 +33,7 @@
 
 | Проект                       |                Статус                | Описание                                                                       |
 |:-----------------------------|:------------------------------------:|:-------------------------------------------------------------------------------|
-| [Docs]                       |            ![Docs Status]            | Документация проекта Egal                                                      |
+| [Docs]                       |        [![Docs Status]][Docs]        | Документация проекта Egal                                                      |
 | [Egal/Framework PHP Package] | ![Egal/Framework PHP Package Status] | Egal/Framework PHP библиотека                                                  |
 | [Egal/Framework NPM Package] | ![Egal/Framework NPM Package Status] | Egal/Framework NPM библиотека                                                  |
 | [Egal/Egal PHP Project]      |   ![Egal/Egal PHP Project Status]    | PHP проект (шаблон) сервиса для Egal экосистемы                                |
