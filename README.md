@@ -2,8 +2,8 @@
 <h1 align="center">Egal | Web Service</h1>
 <p align="center">
 <a href="https://github.com/smartworldteam/egal-web-service"><img src="https://img.shields.io/github/license/smartworldteam/egal-web-service"></a>
-<a href="https://github.com/smartworldteam/egal-web-service"><img src="https://img.shields.io/docker/v/egalbox/web-service"></a>
-<a href="https://github.com/smartworldteam/egal-web-service"><img src="https://img.shields.io/docker/pulls/egalbox/web-service"></a>
+<a href="https://hub.docker.com/repository/docker/egalbox/web-service"><img src="https://img.shields.io/docker/v/egalbox/web-service"></a>
+<a href="https://hub.docker.com/repository/docker/egalbox/web-service"><img src="https://img.shields.io/docker/pulls/egalbox/web-service"></a>
 </p>
 
 ## Новости
@@ -33,7 +33,7 @@
 
 | Проект                       |                               Статус                               | Описание                                                                       |
 |:-----------------------------|:------------------------------------------------------------------:|:-------------------------------------------------------------------------------|
-| [Docs]                       |                       [![Docs Status]][Docs]                       | Документация проекта Egal                                                      |
+| [Docs]                      |                       [![Docs Status]][Docs]                       | Документация проекта Egal                                                      |
 | [Egal/Framework PHP Package] | [![Egal/Framework PHP Package Status]][Egal/Framework PHP Package] | Egal/Framework PHP библиотека                                                  |
 | [Egal/Framework NPM Package] | [![Egal/Framework NPM Package Status]][Egal/Framework NPM Package] | Egal/Framework NPM библиотека                                                  |
 | [Egal/Egal PHP Project]      |      [![Egal/Egal PHP Project Status]][Egal/Egal PHP Project]      | PHP проект (шаблон) сервиса для Egal экосистемы                                |
