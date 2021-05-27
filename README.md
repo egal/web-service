@@ -1,17 +1,7 @@
 <p align="center"><img src="https://raw.githubusercontent.com/smartworldteam/art/main/logo.svg" height="150"></p>
-
-[comment]: <> (Replase Name)
-<p align="center" style="font-size: 35px; font-weight: bold;">
-# Egal
-</p>
-
-[comment]: <> (Replase Description)
-<p align="center" style="font-size: 18px; font-weight: bold;">Web Service</p>
-
-[comment]: <> (Replase badges)
-<p align="center">
- <a href="https://github.com/smartworldteam/egal-web-service"><img src="https://img.shields.io/github/license/smartworldteam/egal-web-service"></a>
-</p>
+<h1 align="center">Egal</h1>
+<h2 align="center">Web Service</h2>
+<p align="center"><a href="https://github.com/smartworldteam/egal-web-service"><img src="https://img.shields.io/github/license/smartworldteam/egal-web-service"></a></p>
 
 ## Новости
 
