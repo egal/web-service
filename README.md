@@ -3,6 +3,9 @@
 [comment]: <> (Replase Name)
 <p align="center" style="font-size: 35px; font-weight: bold;">Egal</p>
 
+[comment]: <> (Replase Name)
+<p align="center" style="font-size: 75px; font-weight: bold;">Egal</p>
+
 [comment]: <> (Replase Description)
 <p align="center" style="font-size: 18px; font-weight: bold;">Web Service</p>
 
