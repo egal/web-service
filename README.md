@@ -36,6 +36,8 @@
 
 [Egal/Framework PHP Package](https://github.com/smartworldteam/egal-framework-php-package) - исходный код Egal/Framework PHP библиотеки.
 
+[Egal/Framework NPM Package](https://github.com/smartworldteam/egal-framework-npm-package) - исходный код Egal/Framework NPM библиотеки.
+
 [Egal Composer Project](https://github.com/smartworldteam/egal-egal-php-project) - PHP шаблон сервиса Egal.
 
 [Auth Service](https://github.com/smartworldteam/egal-auth-service) - коробочный сервис Egal, реализующий базовые функции авторизации.
