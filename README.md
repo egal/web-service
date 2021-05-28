@@ -31,16 +31,16 @@
 
 ## Экосистема
 
-| Проект                       |                               Статус                               | Описание                                                                       |
-|:-----------------------------|:------------------------------------------------------------------:|:-------------------------------------------------------------------------------|
-| [Docs]                      |                       [![Docs Status]][Docs]                       | Документация проекта Egal                                                      |
-| [Egal/Framework PHP Package] | [![Egal/Framework PHP Package Status]][Egal/Framework PHP Package] | Egal/Framework PHP библиотека                                                  |
-| [Egal/Framework NPM Package] | [![Egal/Framework NPM Package Status]][Egal/Framework NPM Package] | Egal/Framework NPM библиотека                                                  |
-| [Egal/Egal PHP Project]      |      [![Egal/Egal PHP Project Status]][Egal/Egal PHP Project]      | PHP проект (шаблон) сервиса для Egal экосистемы                                |
-| [Web Service]                |                [![Web Service Status]][Web Service]                | Сервис Egal экосистемы, реализующий адаптацию HTTP запросов к сервисам         |
-| [Auth Service]               |               [![Auth Service Status]][Auth Service]               | Сервис Egal экосистемы, реализующий базовые функции авторизации                |
-| [Interface Service]          |          [![Interface Service Status]][Interface Service]          | Сервис Egal экосистемы, предназначенный для управления метаданными интерфейсов |
-| [Postgres]                   |                   [![Postgres Status]][Postgres]                   | Надстроенная Система управления базами данных PostgreSQL для Egal экосистемы   |
+| Проект                       |                                    Статус                                     | Описание                                                                       |
+|:-----------------------------|:-----------------------------------------------------------------------------:|:-------------------------------------------------------------------------------|
+| [Docs]                       |                       [![Docs Status]][Docs Status URL]                       | Документация проекта Egal                                                      |
+| [Egal/Framework PHP Package] | [![Egal/Framework PHP Package Status]][Egal/Framework PHP Package Status URL] | Egal/Framework PHP библиотека                                                  |
+| [Egal/Framework NPM Package] | [![Egal/Framework NPM Package Status]][Egal/Framework NPM Package Status URL] | Egal/Framework NPM библиотека                                                  |
+| [Egal/Egal PHP Project]      |      [![Egal/Egal PHP Project Status]][Egal/Egal PHP Project Status URL]      | PHP проект (шаблон) сервиса для Egal экосистемы                                |
+| [Web Service]                |                [![Web Service Status]][Web Service Status URL]                | Сервис Egal экосистемы, реализующий адаптацию HTTP запросов к сервисам         |
+| [Auth Service]               |               [![Auth Service Status]][Auth Service Status URL]               | Сервис Egal экосистемы, реализующий базовые функции авторизации                |
+| [Interface Service]          |          [![Interface Service Status]][Interface Service Status URL]          | Сервис Egal экосистемы, предназначенный для управления метаданными интерфейсов |
+| [Postgres]                   |                   [![Postgres Status]][Postgres Status URL]                   | Надстроенная Система управления базами данных PostgreSQL для Egal экосистемы   |
 
 [Docs]: https://github.com/smartworldteam/egal-docs
 [Egal/Framework PHP Package]: https://github.com/smartworldteam/egal-framework-php-package
@@ -59,6 +59,15 @@
 [Auth Service Status]: https://img.shields.io/docker/v/egalbox/auth-service?label=dockerhub
 [Interface Service Status]: https://img.shields.io/docker/v/egalbox/interface-service?label=dockerhub
 [Postgres Status]: https://img.shields.io/docker/v/egalbox/postgres?label=dockerhub
+
+[Docs Status URL]: https://smartworldteam.github.io/egal-docs/#/
+[Egal/Framework PHP Package Status URL]: https://packagist.org/packages/egal/framework
+[Egal/Framework NPM Package Status URL]: https://www.npmjs.com/package/@egalteam/egal
+[Egal/Egal PHP Project Status URL]: https://packagist.org/packages/egal/egal
+[Web Service Status URL]: https://hub.docker.com/r/egalbox/web-service
+[Auth Service Status URL]: https://hub.docker.com/r/egalbox/auth-service
+[Interface Service Status URL]: https://hub.docker.com/r/egalbox/interface-service
+[Postgres Status URL]: https://hub.docker.com/r/egalbox/postgres
 
 
 ## Разработчик
