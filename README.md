@@ -2,8 +2,8 @@
 <h1 align="center">Egal | Web Service</h1>
 <p align="center">
 <a href="https://github.com/smartworldteam/egal-web-service"><img src="https://img.shields.io/github/license/smartworldteam/egal-web-service"></a>
-<a href="https://hub.docker.com/repository/docker/egalbox/web-service"><img src="https://img.shields.io/docker/v/egalbox/web-service"></a>
-<a href="https://hub.docker.com/repository/docker/egalbox/web-service"><img src="https://img.shields.io/docker/pulls/egalbox/web-service"></a>
+<a href="https://hub.docker.com/r/egalbox/web-service"><img src="https://img.shields.io/docker/v/egalbox/web-service"></a>
+<a href="https://hub.docker.com/r/egalbox/web-service"><img src="https://img.shields.io/docker/pulls/egalbox/web-service"></a>
 </p>
 
 ## Новости
