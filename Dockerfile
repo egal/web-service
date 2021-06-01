@@ -75,7 +75,7 @@ RUN echo '\
         }\n\
     }\n\
 }\n\
-' > /app/unit.json
+' > /var/unit.json
 
 RUN echo '\
 [program:unit]\n\
@@ -88,7 +88,7 @@ stopasgroup=true\n\
 priority=10\n\
 \n\
 [program:unit_config]\n\
-command=curl -X PUT -d @/app/unit.json --unix-socket /var/run/control.unit.sock http://localhost/config\n\
+command=curl -X PUT -d @/var/unit.json --unix-socket /var/run/control.unit.sock http://localhost/config\n\
 autostart=true\n\
 autorestart=false\n\
 priority=100\n\
