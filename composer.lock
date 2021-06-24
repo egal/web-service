@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "8acdfd495f4b60bae316d6861f3fce6c",
+    "content-hash": "eae0c16bca7f05d274e202f7e2098e2c",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -356,16 +356,16 @@
         },
         {
             "name": "egal/framework",
-            "version": "v2.0.0beta16",
+            "version": "v2.0.0beta29",
             "source": {
                 "type": "git",
-                "url": "https://github.com/smartworldteam/egal-framework-php-package.git",
-                "reference": "b161afdbc578263c0cd8735826809f1318f0f6dd"
+                "url": "https://github.com/egal/egal-framework-php-package.git",
+                "reference": "8b8549c29f9bc1356be1d401afd5de69e5a8dd80"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/smartworldteam/egal-framework-php-package/zipball/b161afdbc578263c0cd8735826809f1318f0f6dd",
-                "reference": "b161afdbc578263c0cd8735826809f1318f0f6dd",
+                "url": "https://api.github.com/repos/egal/egal-framework-php-package/zipball/8b8549c29f9bc1356be1d401afd5de69e5a8dd80",
+                "reference": "8b8549c29f9bc1356be1d401afd5de69e5a8dd80",
                 "shasum": ""
             },
             "require": {
@@ -399,10 +399,10 @@
                 "Apache-2.0"
             ],
             "support": {
-                "issues": "https://github.com/smartworldteam/egal-framework-php-package/issues",
-                "source": "https://github.com/smartworldteam/egal-framework-php-package/tree/v2.0.0beta16"
+                "issues": "https://github.com/egal/egal-framework-php-package/issues",
+                "source": "https://github.com/egal/egal-framework-php-package/tree/v2.0.0beta29"
             },
-            "time": "2021-05-13T04:36:47+00:00"
+            "time": "2021-06-24T10:15:17+00:00"
         },
         {
             "name": "egulias/email-validator",
@@ -7661,9 +7661,7 @@
     ],
     "aliases": [],
     "minimum-stability": "dev",
-    "stability-flags": {
-        "egal/framework": 10
-    },
+    "stability-flags": [],
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {

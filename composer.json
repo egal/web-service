@@ -7,7 +7,7 @@
     "require": {
         "php": "^7.4|^8.0",
         "ext-json": "*",
-        "egal/framework": "^2.0.0beta16",
+        "egal/framework": "2.0.0beta29",
         "fruitcake/laravel-cors": "^2.0"
     },
     "require-dev": {
