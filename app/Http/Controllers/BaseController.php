@@ -9,6 +9,10 @@ use Illuminate\Http\Response as IlluminateResponse;
 use Illuminate\Support\Str;
 use Laravel\Lumen\Routing\Controller as LaravelBaseController;
 
+/**
+ * Class BaseController
+ * @package App\Http\Controllers
+ */
 abstract class BaseController extends LaravelBaseController
 {
 
@@ -31,16 +35,16 @@ abstract class BaseController extends LaravelBaseController
         $this->egalRequest = new EgalRequest(
             $this->getToServiceName(),
             $this->getModelName(),
-            $this->getActionName(),
-            [],
-            $this->getToken()
+            $this->getActionName()
         );
 
+        $this->egalRequest->disableServiceAuthorization();
+        $this->egalRequest->setToken($this->getToken());
         $this->egalRequest->addParameters($this->getParameters());
         $someId = $this->getSomeIdOrNull();
         is_null($someId) ?: $this->egalRequest->addParameter('id', $someId);
-
         $this->egalRequest->call();
+
         return $this->generateIlluminateResponse();
     }
 
