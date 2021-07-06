@@ -1,5 +1,6 @@
 name: Build and Push Image to DockerHub
 on:
+  push: {}
   create:
     tags:
       - 'v*'
@@ -22,7 +23,15 @@ jobs:
         id: image-metadata
         run: |
           REPOSITORY="${{ secrets.DOCKERHUB_USERNAME }}/${GITHUB_REPOSITORY#*/egal-}"
-          TAGS="${REPOSITORY}:${GITHUB_REF##*/v}"
+          if [ "${{ github.event_name }}" = 'push' ]; then
+            TAGS="${REPOSITORY}:${GITHUB_REF##*/}"
+          fi
+          if [ "${{ github.event_name }}" = 'create' ]; then
+            TAGS="${REPOSITORY}:${GITHUB_REF##*/v}"
+          fi
+          if [ "${TAGS}" = '' ]; then
+            exit 1;
+          fi
           echo "::set-output name=tags::$TAGS"
       - name: Build and push
         uses: docker/build-push-action@v2
