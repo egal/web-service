@@ -45,6 +45,12 @@ abstract class BaseController extends LaravelBaseController
         is_null($someId) ?: $this->egalRequest->addParameter('id', $someId);
         $this->egalRequest->call();
 
+        // TODO: temporary solution @see https://github.com/egal/egal-framework-php-package/issues/62
+        $response = $this->egalRequest->response;
+        if ($response->getErrorMessage() === 'Service not responding!') {
+            $this->egalRequest->call();
+        }
+
         return $this->generateIlluminateResponse();
     }
 
