@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "3adf0f8b483f118a5d79e1e44c067fb4",
+    "content-hash": "c5a1cc0e5342074b842cc2d37c028a63",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -356,16 +356,16 @@
         },
         {
             "name": "egal/framework",
-            "version": "v2.0.0beta32",
+            "version": "v2.0.0beta33",
             "source": {
                 "type": "git",
                 "url": "https://github.com/egal/egal-framework-php-package.git",
-                "reference": "7661a0f188df5fa3980926e8a8962b5960043da8"
+                "reference": "e7499dd2039ba412717d83e20e701bae12bb6226"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/egal/egal-framework-php-package/zipball/7661a0f188df5fa3980926e8a8962b5960043da8",
-                "reference": "7661a0f188df5fa3980926e8a8962b5960043da8",
+                "url": "https://api.github.com/repos/egal/egal-framework-php-package/zipball/e7499dd2039ba412717d83e20e701bae12bb6226",
+                "reference": "e7499dd2039ba412717d83e20e701bae12bb6226",
                 "shasum": ""
             },
             "require": {
@@ -407,9 +407,9 @@
             ],
             "support": {
                 "issues": "https://github.com/egal/egal-framework-php-package/issues",
-                "source": "https://github.com/egal/egal-framework-php-package/tree/v2.0.0beta32"
+                "source": "https://github.com/egal/egal-framework-php-package/tree/v2.0.0beta33"
             },
-            "time": "2021-07-19T10:46:37+00:00"
+            "time": "2021-07-22T09:45:48+00:00"
         },
         {
             "name": "egulias/email-validator",

@@ -40,7 +40,7 @@ class LatestController extends BaseController
 
     public function generateIlluminateResponse(): IlluminateResponse
     {
-        $response = $this->egalRequest->response;
+        $response = $this->egalRequest->getResponse();
         $result = [
             MessageType::ACTION => $response->getActionMessage()->toArray(),
             MessageType::START_PROCESSING => is_null($response->getStartProcessingMessage())

@@ -17,8 +17,8 @@ class VersionZeroController extends VersionOneController
             'query' => $this->egalRequest->getParameters(),
         ];
 
-        $resultMessage = $this->egalRequest->response->getActionResultMessage();
-        $errorMessage = $this->egalRequest->response->getActionErrorMessage();
+        $resultMessage = $this->egalRequest->getResponse()->getActionResultMessage();
+        $errorMessage = $this->egalRequest->getResponse()->getActionErrorMessage();
 
         if ($resultMessage) {
             $data = $resultMessage->getData();
@@ -56,13 +56,13 @@ class VersionZeroController extends VersionOneController
             $data = $errorMessage->toArray();
         } else {
             $data = [
-                'message' => $this->egalRequest->response->getErrorMessage()
+                'message' => $this->egalRequest->getResponse()->getErrorMessage()
             ];
         }
 
         $result['data'] = $data;
 
-        return response(json_encode($result), $this->egalRequest->response->getStatusCode(), [
+        return response(json_encode($result), $this->egalRequest->getResponse()->getStatusCode(), [
             'Content-Type' => 'application/json'
         ]);
     }
