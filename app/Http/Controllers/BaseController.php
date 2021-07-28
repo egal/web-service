@@ -46,7 +46,7 @@ abstract class BaseController extends LaravelBaseController
         $this->egalRequest->call();
 
         // TODO: temporary solution @see https://github.com/egal/egal-framework-php-package/issues/62
-        $response = $this->egalRequest->response;
+        $response = $this->egalRequest->getResponse();
         if ($response->getErrorMessage() === 'Service not responding!') {
             $this->egalRequest->call();
         }

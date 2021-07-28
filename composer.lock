@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "c5a1cc0e5342074b842cc2d37c028a63",
+    "content-hash": "0fb164c93d46cb102b18cfd0c22bc7d6",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -356,16 +356,16 @@
         },
         {
             "name": "egal/framework",
-            "version": "v2.0.0beta33",
+            "version": "dev-fix_service_not_responding",
             "source": {
                 "type": "git",
                 "url": "https://github.com/egal/egal-framework-php-package.git",
-                "reference": "e7499dd2039ba412717d83e20e701bae12bb6226"
+                "reference": "ea48eaa074e234c94028f6f525a412c9f8fd9f10"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/egal/egal-framework-php-package/zipball/e7499dd2039ba412717d83e20e701bae12bb6226",
-                "reference": "e7499dd2039ba412717d83e20e701bae12bb6226",
+                "url": "https://api.github.com/repos/egal/egal-framework-php-package/zipball/ea48eaa074e234c94028f6f525a412c9f8fd9f10",
+                "reference": "ea48eaa074e234c94028f6f525a412c9f8fd9f10",
                 "shasum": ""
             },
             "require": {
@@ -407,9 +407,9 @@
             ],
             "support": {
                 "issues": "https://github.com/egal/egal-framework-php-package/issues",
-                "source": "https://github.com/egal/egal-framework-php-package/tree/v2.0.0beta33"
+                "source": "https://github.com/egal/egal-framework-php-package/tree/fix_service_not_responding"
             },
-            "time": "2021-07-22T09:45:48+00:00"
+            "time": "2021-07-23T03:02:42+00:00"
         },
         {
             "name": "egulias/email-validator",
@@ -7668,7 +7668,9 @@
     ],
     "aliases": [],
     "minimum-stability": "dev",
-    "stability-flags": [],
+    "stability-flags": {
+        "egal/framework": 20
+    },
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {
