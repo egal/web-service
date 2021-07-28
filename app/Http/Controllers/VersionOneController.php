@@ -30,8 +30,7 @@ class VersionOneController extends BaseController
         if ($this->getModelName() === 'Metadata') {
             switch ($this->getActionName()) {
                 case 'getAll':
-                    $this->generateMetadataGetAllActionResults();
-                    return $this->generateIlluminateResponse();
+                    throw new Exception('Метод не реализован!');
                 default:
                     throw new Exception('Метод не найден!');
             }
@@ -49,8 +48,10 @@ class VersionOneController extends BaseController
             'query' => $this->egalRequest->getParameters(),
         ];
 
-        $resultMessage = $this->egalRequest->response->getActionResultMessage();
-        $errorMessage = $this->egalRequest->response->getActionErrorMessage();
+        $response = $this->egalRequest->getResponse();
+
+        $resultMessage = $response->getActionResultMessage();
+        $errorMessage = $response->getActionErrorMessage();
 
         if ($resultMessage) {
             $data = $resultMessage->getData();
@@ -58,13 +59,13 @@ class VersionOneController extends BaseController
             $data = $errorMessage->toArray();
         } else {
             $data = [
-                'message' => $this->egalRequest->response->getErrorMessage()
+                'message' => $response->getErrorMessage()
             ];
         }
 
         $result['data'] = $data;
 
-        return response(json_encode($result), $this->egalRequest->response->getStatusCode(), [
+        return response(json_encode($result), $response->getStatusCode(), [
             'Content-Type' => 'application/json'
         ]);
     }
@@ -268,25 +269,6 @@ class VersionOneController extends BaseController
         }
 
         return $result;
-    }
-
-    private function generateMetadataGetAllActionResults()
-    {
-        $actionResultMessage = new ActionResultMessage();
-
-        $this->egalRequest = new Action(
-            $this->getToServiceName(),
-            'Metadata',
-            'getAll'
-        );
-
-        $this->egalRequest->response = new Response();
-        $data = $this->getMetadata();
-
-        $this->egalRequest->response->setStatusCode(200);
-        $actionResultMessage->setData($data);
-
-        $this->egalRequest->response->setActionResultMessage($actionResultMessage);
     }
 
     /**
