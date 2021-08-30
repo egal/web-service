@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "c5a1cc0e5342074b842cc2d37c028a63",
+    "content-hash": "9a3064f63bc1ee338d2891233d1923f2",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -356,16 +356,16 @@
         },
         {
             "name": "egal/framework",
-            "version": "v2.0.0beta33",
+            "version": "v2.0.0beta34",
             "source": {
                 "type": "git",
                 "url": "https://github.com/egal/egal-framework-php-package.git",
-                "reference": "e7499dd2039ba412717d83e20e701bae12bb6226"
+                "reference": "aea622a9ce1d4abe69254ba8f753575d514e4b98"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/egal/egal-framework-php-package/zipball/e7499dd2039ba412717d83e20e701bae12bb6226",
-                "reference": "e7499dd2039ba412717d83e20e701bae12bb6226",
+                "url": "https://api.github.com/repos/egal/egal-framework-php-package/zipball/aea622a9ce1d4abe69254ba8f753575d514e4b98",
+                "reference": "aea622a9ce1d4abe69254ba8f753575d514e4b98",
                 "shasum": ""
             },
             "require": {
@@ -407,9 +407,9 @@
             ],
             "support": {
                 "issues": "https://github.com/egal/egal-framework-php-package/issues",
-                "source": "https://github.com/egal/egal-framework-php-package/tree/v2.0.0beta33"
+                "source": "https://github.com/egal/egal-framework-php-package/tree/v2.0.0beta34"
             },
-            "time": "2021-07-22T09:45:48+00:00"
+            "time": "2021-07-29T06:53:14+00:00"
         },
         {
             "name": "egulias/email-validator",
@@ -7676,5 +7676,5 @@
         "ext-json": "*"
     },
     "platform-dev": [],
-    "plugin-api-version": "2.0.0"
+    "plugin-api-version": "2.1.0"
 }
