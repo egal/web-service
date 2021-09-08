@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "cdf0232fc39ecff21fc5806dc5cfe251",
+    "content-hash": "615a3fe8fed097328af29248489b6dfb",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -356,16 +356,16 @@
         },
         {
             "name": "egal/framework",
-            "version": "v2.0.0beta40",
+            "version": "v2.0.0beta41",
             "source": {
                 "type": "git",
                 "url": "https://github.com/egal/egal-framework-php-package.git",
-                "reference": "41b2af0138a18124b6f110ddefc326b0cedd1c5d"
+                "reference": "cc545c60c43c7c9170759c370107cfa004903828"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/egal/egal-framework-php-package/zipball/41b2af0138a18124b6f110ddefc326b0cedd1c5d",
-                "reference": "41b2af0138a18124b6f110ddefc326b0cedd1c5d",
+                "url": "https://api.github.com/repos/egal/egal-framework-php-package/zipball/cc545c60c43c7c9170759c370107cfa004903828",
+                "reference": "cc545c60c43c7c9170759c370107cfa004903828",
                 "shasum": ""
             },
             "require": {
@@ -386,30 +386,24 @@
             },
             "type": "library",
             "autoload": {
-                "psr-4": {
-                    "Egal\\Egal\\": "egal/",
-                    "Egal\\Auth\\": "auth/",
-                    "Egal\\CodeGenerator\\": "code-generator/",
-                    "Egal\\Core\\": "core/",
-                    "Egal\\Exception\\": "exception/",
-                    "Egal\\Model\\": "model/",
-                    "Egal\\Validation\\": "validation/",
-                    "Egal\\Tests\\": "tests/"
-                },
                 "files": [
-                    "core/helpers.php",
-                    "model/helpers.php"
-                ]
+                    "src/Core/helpers.php",
+                    "src/Model/helpers.php"
+                ],
+                "psr-4": {
+                    "Egal\\": "src/"
+                }
             },
             "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "Apache-2.0"
             ],
+            "description": "The Egal Framework.",
             "support": {
                 "issues": "https://github.com/egal/egal-framework-php-package/issues",
-                "source": "https://github.com/egal/egal-framework-php-package/tree/v2.0.0beta40"
+                "source": "https://github.com/egal/egal-framework-php-package/tree/v2.0.0beta41"
             },
-            "time": "2021-08-26T10:21:08+00:00"
+            "time": "2021-08-31T13:01:16+00:00"
         },
         {
             "name": "egulias/email-validator",
