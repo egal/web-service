@@ -1,34 +1,42 @@
-FROM ubuntu:20.04
+FROM php:8.0.10-cli-buster
 
-ENV TZ=Europe/London
-RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
+# Arguments defined in docker-compose.yml
+ARG user='nonroot'
+ARG uid=1000
 
-# Basic actions
-RUN apt update \
-    && apt full-upgrade -y \
-    && apt install -y \
+# Установить системные зависимости
+RUN apt-get update \
+    && apt-get install -y \
+        libpq-dev \
+        libssl-dev \
+        libcurl4-openssl-dev \
         curl \
-        git \
-        supervisor \
-        gnupg \
         zip \
-        unzip
+        unzip \
+        procps \
+        openssl \
+        wget \
+        git \
+    && apt-get clean \
+    && rm -rf /var/lib/apt/lists/*
 
-# Install nginx-unit list
-RUN curl -sL https://nginx.org/keys/nginx_signing.key | apt-key add - \
-    && echo "deb https://packages.nginx.org/unit/ubuntu/ focal unit" >/etc/apt/sources.list.d/unit.list \
-    && echo "deb-src https://packages.nginx.org/unit/ubuntu/ focal unit" >>/etc/apt/sources.list.d/unit.list
+# Установить расширения PHP
+RUN docker-php-ext-install \
+    sockets \
+    pcntl
 
-# Software installation
-RUN apt update \
-    && apt install -y \
-        unit-php \
-        php-sockets \
-        php-xml \
-        php-mbstring \
-        php-zip \
-        php-curl \
-    && apt clean
+# Install Swoole
+RUN cd /tmp && git clone https://github.com/swoole/swoole-src.git \
+    && cd swoole-src \
+    && git checkout v4.6.7 \
+    && phpize \
+    && ./configure --enable-openssl --enable-swoole-curl --enable-http2 --enable-mysqlnd \
+    && make && make install \
+    && touch /usr/local/etc/php/conf.d/swoole.ini \
+    && echo 'extension=swoole.so' > /usr/local/etc/php/conf.d/swoole.ini \
+    && wget -O /usr/local/bin/dumb-init https://github.com/Yelp/dumb-init/releases/download/v1.2.2/dumb-init_1.2.2_amd64 \
+    && chmod +x /usr/local/bin/dumb-init \
+    && apt-get autoremove -y && rm -rf /var/lib/apt/lists/*
 
 # Получить последнюю версию Composer
 COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
@@ -37,62 +45,25 @@ COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
 ADD https://github.com/ufoscout/docker-compose-wait/releases/download/2.8.0/wait /wait
 RUN chmod +x /wait
 
-WORKDIR /app
-COPY ./ /app
-RUN composer install --no-interaction
-
-# Arguments defined in docker-compose.yml
-ARG user=dev
-ARG uid=1000
-
 # Create system user to run Composer and Artisan Commands
 RUN useradd -G www-data,root -u $uid -d /home/$user $user
-RUN mkdir -p /home/$user && \
-    chown -R $user:$user /home/$user && \
-    chown -R $user:$user /app
+RUN mkdir -p /home/$user/.composer && \
+    chown -R $user:$user /home/$user
 
-RUN echo '\
-{\n\
-    "applications": {\n\
-        "web-service": {\n\
-            "type": "php",\n\
-            "processes": {\n\
-                "max": 50,\n\
-                "spare": 50\n\
-            },\n\
-            "root": "/app/public",\n\
-            "user": "dev",\n\
-            "index": "index.php",\n\
-            "script": "index.php",\n\
-            "options": {\n\
-                "file": "/etc/php/7.4/cli/php.ini"\n\
-            }\n\
-        }\n\
-    },\n\
-    "listeners": {\n\
-        "*:8080": {\n\
-            "pass": "applications/web-service"\n\
-        }\n\
-    }\n\
-}\n\
-' > /unit.json
+RUN mkdir /app \
+    && chmod -R 755 /app \
+    && chown -R $user:$user /app
 
-RUN echo '\
-[program:unit]\n\
-command=/usr/sbin/unitd --no-daemon\n\
-numprocs=1\n\
-autostart=true\n\
-autorestart=true\n\
-killasgroup=true\n\
-stopasgroup=true\n\
-priority=10\n\
-\n\
-[program:unit_config]\n\
-command=curl -X PUT -d @/unit.json --unix-socket /var/run/control.unit.sock http://localhost/config\n\
-autostart=true\n\
-autorestart=false\n\
-priority=100\n\
-startsecs=0\n\
-' > /etc/supervisor/conf.d/unit.conf
+USER $user
 
-CMD /wait && /usr/bin/supervisord -n -c /etc/supervisor/supervisord.conf
+WORKDIR /app
+
+COPY --chown=$user composer.json .
+COPY --chown=$user composer.lock .
+RUN composer install --no-interaction --no-progress --no-autoloader --dev
+COPY --chown=$user . .
+RUN composer dump-autoload
+# TODO: Избавиться от chmod
+RUN chmod -R 755 /app
+
+CMD /wait && ./server
