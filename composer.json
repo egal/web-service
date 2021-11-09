@@ -7,7 +7,7 @@
     "require": {
         "php": "^8.0",
         "ext-json": "*",
-        "egal/framework": "dev-speed_increase_with_rpc",
+        "egal/framework": "dev-speed_increase",
         "symfony/psr-http-message-bridge": "^2.1"
     },
     "require-dev": {
