@@ -16,7 +16,6 @@ return [
             'host' => env('SWOOLE_HTTP_HOST', '0.0.0.0'),
             'port' => (int)env('SWOOLE_HTTP_PORT', 8080),
             'options' => [
-                'pid_file' => env('SWOOLE_HTTP_PID_FILE', base_path('storage/logs/swoole_http.pid')),
                 'log_file' => env('SWOOLE_HTTP_LOG_FILE', base_path('storage/logs/swoole_http.log')),
                 'reactor_num' => (int)env(
                     'SWOOLE_HTTP_REACTOR_NUM',
