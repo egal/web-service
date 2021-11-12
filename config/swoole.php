@@ -19,11 +19,11 @@ return [
                 'log_file' => env('SWOOLE_HTTP_LOG_FILE', base_path('storage/logs/swoole_http.log')),
                 'reactor_num' => (int)env(
                     'SWOOLE_HTTP_REACTOR_NUM',
-                    swoole_cpu_num() * (float)env('SWOOLE_HTTP_REACTOR_NUM_MULTIPLIER')
+                    swoole_cpu_num() * (float)env('SWOOLE_HTTP_REACTOR_NUM_MULTIPLIER', 1)
                 ),
                 'worker_num' => (int)env(
                     'SWOOLE_HTTP_WORKER_NUM',
-                    swoole_cpu_num() * (float)env('SWOOLE_HTTP_WORKER_NUM_MULTIPLIER')
+                    swoole_cpu_num() * (float)env('SWOOLE_HTTP_WORKER_NUM_MULTIPLIER', 1)
                 ),
             ],
         ],

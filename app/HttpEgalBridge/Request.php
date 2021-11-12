@@ -2,8 +2,9 @@
 
 namespace App\HttpEgalBridge;
 
+use App\Exceptions\IncorrectRouteLineException;
+use App\Exceptions\UnsupportedContentTypeException;
 use Egal\Core\Communication\Request as EgalRequest;
-use Exception;
 use Illuminate\Http\Request as HttpRequest;
 
 class Request
@@ -11,27 +12,26 @@ class Request
 
     public static function fromHttpRequest(string $routeLine, HttpRequest $httpRequest): EgalRequest
     {
+        $contentType = $httpRequest->getContentType();
+
+        if ($contentType && $contentType !== 'json') {
+            throw UnsupportedContentTypeException::make($contentType);
+        }
+
         $explodedRouteLine = explode('/', $routeLine);
 
         if (count($explodedRouteLine) > 4 || count($explodedRouteLine) < 3) {
-            throw new Exception('Route line is incorrect!');
+            throw new IncorrectRouteLineException();
         }
 
         [$serviceName, $modelName, $actionName] = $explodedRouteLine;
-
-        if ($httpRequest->getContentType() && $httpRequest->getContentType() !== 'json') {
-            throw new Exception('We don\'t support selected content type! [' . $httpRequest->getContentType() . ']');
-        }
-
-        $parameters = array_merge(
-            $httpRequest->query->all(),
-            json_decode($httpRequest->getContent(), true) ?? []
-        );
-
         $request = new EgalRequest($serviceName, $modelName, $actionName);
         $request->disableServiceAuthorization();
         $request->setToken($httpRequest->header('Authorization'));
-        $request->addParameters($parameters);
+        $request->addParameters(array_merge(
+            $httpRequest->query->all(),
+            json_decode($httpRequest->getContent(), true) ?? []
+        ));
 
         if (isset($explodedRouteLine[3])) {
             $request->addParameter('id', $explodedRouteLine[3]);
