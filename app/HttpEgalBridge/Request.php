@@ -2,7 +2,6 @@
 
 namespace App\HttpEgalBridge;
 
-use App\Exceptions\IncorrectRouteLineException;
 use App\Exceptions\UnsupportedContentTypeException;
 use Egal\Core\Communication\Request as EgalRequest;
 use Illuminate\Http\Request as HttpRequest;
@@ -10,7 +9,13 @@ use Illuminate\Http\Request as HttpRequest;
 class Request
 {
 
-    public static function fromHttpRequest(string $routeLine, HttpRequest $httpRequest): EgalRequest
+    public static function fromHttpRequest(
+        string      $service,
+        string      $model,
+        string      $action,
+        ?string     $id,
+        HttpRequest $httpRequest
+    ): EgalRequest
     {
         $contentType = $httpRequest->getContentType();
 
@@ -18,14 +23,7 @@ class Request
             throw UnsupportedContentTypeException::make($contentType);
         }
 
-        $explodedRouteLine = explode('/', $routeLine);
-
-        if (count($explodedRouteLine) > 4 || count($explodedRouteLine) < 3) {
-            throw new IncorrectRouteLineException();
-        }
-
-        [$serviceName, $modelName, $actionName] = $explodedRouteLine;
-        $request = new EgalRequest($serviceName, $modelName, $actionName);
+        $request = new EgalRequest($service, $model, $action);
         $request->disableServiceAuthorization();
         $request->setToken($httpRequest->header('Authorization'));
         $request->addParameters(array_merge(
@@ -33,8 +31,8 @@ class Request
             json_decode($httpRequest->getContent(), true) ?? []
         ));
 
-        if (isset($explodedRouteLine[3])) {
-            $request->addParameter('id', $explodedRouteLine[3]);
+        if ($id) {
+            $request->addParameter('id', $id);
         }
 
         return $request;

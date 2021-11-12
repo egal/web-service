@@ -16,10 +16,10 @@ $router->get('/', function () {
 
 $router->addRoute(
     ['GET', 'POST', 'PUT', 'DELETE'],
-    '/{routeLine:.*}',
-    function (string $routeLine, \Illuminate\Http\Request $httpRequest) {
+    '/{service}/{model}/{action}[/{id}]',
+    function (\Illuminate\Http\Request $httpRequest, string $service, string $model, string $action, ?string $id = null) {
         return \App\HttpEgalBridge\Response::toHttpResponse(
-            \App\HttpEgalBridge\Request::fromHttpRequest($routeLine, $httpRequest)->call()
+            \App\HttpEgalBridge\Request::fromHttpRequest($service, $model, $action, $id, $httpRequest)->call()
         );
     }
 );

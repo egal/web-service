@@ -6,6 +6,7 @@ use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Laravel\Lumen\Exceptions\Handler as ExceptionHandler;
+use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 use Throwable;
 
 class Handler extends ExceptionHandler
@@ -17,10 +18,21 @@ class Handler extends ExceptionHandler
      */
     public function render($request, Throwable $exception)
     {
-        $code = $exception->getCode() !== 0 ? $exception->getCode() : 500;
-        $data = ['message' => $exception->getMessage(), 'code' => $code];
+        $code = $exception->getCode();
+        $message = $exception->getMessage();
 
-        return response(json_encode($data), $code, ['Content-Type' => 'application/json']);
+        if ($exception instanceof NotFoundHttpException) {
+            $message = 'Not Found!';
+            $code = 404;
+        }
+
+        $code = $code !== 0 ? $code : 500;
+
+        return response(
+            json_encode(['message' => $message, 'code' => $code]),
+            $code,
+            ['Content-Type' => 'application/json']
+        );
     }
 
 }
