@@ -4,10 +4,9 @@
 /** @var \Egal\Core\Application $app */
 $app = require __DIR__ . '/bootstrap/app.php';
 
-$server = new \Swoole\HTTP\Server(
-    env('SWOOLE_HTTP_HOST', '0.0.0.0'),
-    (int) env('SWOOLE_HTTP_PORT', 8080)
-);
+$server = new \Swoole\HTTP\Server(config('swoole.http.server.host'), config('swoole.http.server.port'));
+
+$server->set(config('swoole.http.server.options'));
 
 $server->on(
     'start',
