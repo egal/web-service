@@ -10,11 +10,11 @@ class Request
 {
 
     public static function fromHttpRequest(
+        HttpRequest $httpRequest,
         string      $service,
         string      $model,
         string      $action,
-        ?string     $id,
-        HttpRequest $httpRequest
+        ?string     $id = null
     ): EgalRequest
     {
         $contentType = $httpRequest->getContentType();
