@@ -495,12 +495,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/egal/egal-framework-php-package.git",
-                "reference": "a474f1e6263597b453375807565dd73d11c840c2"
+                "reference": "e27fca0580822cf0e05c4c30652d358abed7c4e7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/egal/egal-framework-php-package/zipball/a474f1e6263597b453375807565dd73d11c840c2",
-                "reference": "a474f1e6263597b453375807565dd73d11c840c2",
+                "url": "https://api.github.com/repos/egal/egal-framework-php-package/zipball/e27fca0580822cf0e05c4c30652d358abed7c4e7",
+                "reference": "e27fca0580822cf0e05c4c30652d358abed7c4e7",
                 "shasum": ""
             },
             "require": {
@@ -541,7 +541,7 @@
                 "issues": "https://github.com/egal/egal-framework-php-package/issues",
                 "source": "https://github.com/egal/egal-framework-php-package/tree/speed_increase"
             },
-            "time": "2021-11-16T07:31:22+00:00"
+            "time": "2021-11-17T06:10:38+00:00"
         },
         {
             "name": "egulias/email-validator",
