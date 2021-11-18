@@ -6,8 +6,8 @@ $router->get('/', function () {
     return response(
         json_encode([
             'message' => 'Hello, world!',
-            'project_name' => config('app.name'),
-            'service_name' => config('app.service_name'),
+            'app_name' => config('app.name'),
+            'app_service_name' => config('app.service_name'),
         ]),
         200,
         ['Content-Type' => 'application/json']
