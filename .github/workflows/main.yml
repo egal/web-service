@@ -21,7 +21,7 @@ jobs:
       - name: Prepare tags for image
         id: image-metadata
         run: |
-          REPOSITORY="${{ secrets.DOCKERHUB_USERNAME }}/${GITHUB_REPOSITORY#*/egal-}"
+          REPOSITORY="${{ secrets.DOCKERHUB_USERNAME }}/${GITHUB_REPOSITORY#*/}"
           TAGS="${REPOSITORY}:${GITHUB_REF##*/v}"
           echo "::set-output name=tags::$TAGS"
       - name: Build and push
