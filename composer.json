@@ -2,12 +2,10 @@
     "name": "egal/web-service",
     "description": "Egal web-service project",
     "type": "project",
-    "minimum-stability": "dev",
-    "prefer-stable": true,
     "require": {
         "php": "^8.0",
         "ext-json": "*",
-        "egal/framework": "dev-speed_increase",
+        "egal/framework": "2.0.0",
         "symfony/psr-http-message-bridge": "^2.1"
     },
     "require-dev": {
