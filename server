@@ -1,0 +1,28 @@
+#!/usr/bin/env php
+<?php
+
+/** @var \Egal\Core\Application $app */
+$app = require __DIR__ . '/bootstrap/app.php';
+
+$server = new \Swoole\HTTP\Server(config('swoole.http.server.host'), config('swoole.http.server.port'));
+
+$server->set(config('swoole.http.server.options'));
+
+$server->on(
+    'start',
+    function (\Swoole\Http\Server $server) {
+        echo 'Http server is started!' . PHP_EOL;
+    }
+);
+
+$server->on(
+    'request',
+    function (\Swoole\Http\Request $swooleRequest, \Swoole\Http\Response $swooleResponse) use ($app) {
+        \App\SwooleSymfonyBridge\Response::writeSwooleResponse(
+            $swooleResponse,
+            $app->handle(\App\SwooleSymfonyBridge\Request::createFromSwooleRequest($swooleRequest))
+        );
+    }
+);
+
+$server->start();

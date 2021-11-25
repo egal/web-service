@@ -2,17 +2,15 @@
 
 namespace App\Providers;
 
-use Illuminate\Support\ServiceProvider;
+use Egal\Core\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
 {
-    /**
-     * Register any application services.
-     *
-     * @return void
-     */
-    public function register()
+
+    public function register(): void
     {
-        //
+        $this->mergeConfigFrom(base_path('vendor/egal/framework/src/Core/config/app.php'), 'app');
+        $this->mergeConfigFrom(base_path('vendor/egal/framework/src/Core/config/bus.php'), 'bus');
     }
+
 }
