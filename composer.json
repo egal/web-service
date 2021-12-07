@@ -5,7 +5,7 @@
     "require": {
         "php": "^8.0",
         "ext-json": "*",
-        "egal/framework": "2.0.0",
+        "egal/framework": "2.1.0",
         "symfony/psr-http-message-bridge": "^2.1"
     },
     "require-dev": {
