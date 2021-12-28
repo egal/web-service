@@ -20,10 +20,10 @@ return [
             'options' => [
                 'reactor_num' => env('SWOOLE_AUTO_CONFIG', false)
                     ? (int)env('SWOOLE_HTTP_REACTOR_NUM', swoole_cpu_num() * (float)env('SWOOLE_HTTP_REACTOR_NUM_MULTIPLIER', 1))
-                    : 1,
+                    : (int)env('SWOOLE_HTTP_REACTOR_NUM',1),
                 'worker_num' => env('SWOOLE_AUTO_CONFIG', false)
                     ? (int)env('SWOOLE_HTTP_WORKER_NUM', swoole_cpu_num() * (float)env('SWOOLE_HTTP_WORKER_NUM_MULTIPLIER', 1))
-                    : 1,
+                    : (int)env('SWOOLE_HTTP_WORKER_NUM',1),
             ],
 
         ],
